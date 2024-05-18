@@ -1,0 +1,16 @@
+/* Logo.css */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+  font-size: 48px; /* Increase font size for better visibility */
+  font-weight: bold; /* Add thickness */
+  color: black;
+  text-transform: uppercase; /* Make text uppercase */
+  transform: skewX(-15deg); /* Apply slant */
+}
+
+.poke {
+  color: red;
+}

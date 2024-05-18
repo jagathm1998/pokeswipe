@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import WelcomePage from "./components/WelcomePage";
+import PokemonDetails from "./components/PokemonDetails";
+import LikedPokemons from "./components/LikedPokemons";
+import "./App.css";
 
 function App() {
+  const [likedPokemons, setLikedPokemons] = useState([]);
+
+  const handleLikePokemon = (pokemon) => {
+    // Check if the liked Pokemon is already in the likedPokemons array
+    if (!likedPokemons.some((p) => p.id === pokemon.id)) {
+      // If not, add the liked Pokemon to the array
+      setLikedPokemons([...likedPokemons, pokemon]);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route
+            path="/pokemon-details"
+            element={
+              <PokemonDetails pokemonId={1} onLike={handleLikePokemon} />
+            }
+          />
+          <Route
+            path="/liked-pokemons"
+            element={<LikedPokemons likedPokemons={likedPokemons} />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

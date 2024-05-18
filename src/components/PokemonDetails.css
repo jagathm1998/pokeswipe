@@ -1,0 +1,145 @@
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.logo {
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px; /* Set a fixed width */
+  height: 400px; /* Set a fixed height */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Hide overflow content */
+}
+
+.dark-mode .pokemon-card {
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.pokemon-image {
+  width: 100%;
+  height: 200px;
+}
+
+.details-container {
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-row {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  margin-bottom: 10px;
+}
+
+.pill-container,
+.abilities-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pill {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 5px; /* Add spacing between pills */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+}
+
+.dislike-button,
+.like-button {
+  font-size: 16px;
+  width: 120px;
+  background-color: #ff5252; /* Red color for dislike */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-button {
+  background-color: #4caf50; /* Green color for like */
+}
+
+.dislike-button:hover {
+  background-color: #ff1744; /* Darker red color for dislike */
+}
+.like-button:hover {
+  background-color: #3c893e;
+}
+.liked-button {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  border: none;
+  cursor: pointer;
+  color: #ff1744;
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* Tablet Styles */
+@media only screen and (max-width: 768px) {
+  .pokemon-card {
+    width: 300px;
+    max-height: 300px; /* Adjusted max-height for tablet */
+  }
+  .pokemon-image {
+    width: 100%;
+    height: 100px;
+  }
+  .details-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 480px) {
+  .pokemon-card {
+    width: 250px;
+    max-height: 250px; /* Adjusted max-height for mobile */
+  }
+  .pokemon-image {
+    width: 100%;
+    height: 100px;
+  }
+  .details-row {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin-bottom: 10px;
+  }
+}

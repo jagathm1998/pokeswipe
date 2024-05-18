@@ -1,0 +1,74 @@
+.liked-pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.liked-pokemons-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  /* margin-top: 80px; */
+}
+
+.pokemon-liked-card {
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pokemon-liked-image {
+  width: 80%;
+  height: 70%;
+}
+
+.liked-pokemon-name {
+  font-size: 20px;
+  width: 100%;
+}
+
+.dark-mode .liked-pokemons {
+  background-color: #222;
+  color: #fff;
+}
+.dark-mode .pokemon-liked-card {
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+/* Tablet Styles */
+@media only screen and (max-width: 768px) {
+  .pokemon-liked-card {
+    width: 150px; /* Adjusted width for tablet */
+    height: 200px; /* Adjusted height for tablet */
+    overflow: hidden;
+  }
+  .liked-pokemon-name {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 480px) {
+  .pokemon-liked-card {
+    width: 120px; /* Adjusted width for mobile */
+    height: 150px; /* Adjusted height for mobile */
+    margin: 5px; /* Reduced margin for mobile */
+  }
+
+  .pokemon-liked-image {
+    width: 70%; /* Adjusted width for mobile */
+    height: 60%; /* Adjusted height for mobile */
+  }
+}
